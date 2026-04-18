@@ -3,8 +3,6 @@ int main() {
     if (ht == NULL) {
         return 1;
     }
-
-    // exemple
     Masina *m1 = creareMasina("Dacia_Logan", 120, "B123ABC");
     Masina *m2 = creareMasina("BMW_X5", 376, "CJ99XYZ");
     Masina *m3 = creareMasina("Audi_A4", 632, "IF10QWE");
