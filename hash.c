@@ -24,6 +24,7 @@ HashTable* creareHashTable(int size) {
     return ht;
 }
 
+// insereaza un element in hashtable
 int insert_HT(HashTable *ht, Masina *var) {
     if (ht == NULL || var == NULL) {
         return 0;
@@ -33,6 +34,7 @@ int insert_HT(HashTable *ht, Masina *var) {
     int start = index;
 
     while (ht->table[index] != NULL) {
+        // daca cheia exista deja, nu inseram duplicat
         if (ht->table[index]->pret == var->pret) {
             return 0;
         }
@@ -40,6 +42,7 @@ int insert_HT(HashTable *ht, Masina *var) {
         index = (index + 1) % ht->size;
 
         if (index == start) {
+            // tabela este plina
             return 0;
         }
     }
@@ -47,6 +50,8 @@ int insert_HT(HashTable *ht, Masina *var) {
     ht->table[index] = var;
     return 1;
 }
+
+// returneaza valoarea corespunzatoare cheii
 Masina* get_value_HT(HashTable *ht, int key) {
     if (ht == NULL) {
         return NULL;

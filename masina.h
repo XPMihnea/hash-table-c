@@ -1,5 +1,8 @@
-#ifndef MASINA_H
-#define MASINA_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 256
 
 typedef struct Masina {
     char *marca;
@@ -7,9 +10,7 @@ typedef struct Masina {
     char numar[8];
 } Masina;
 
-Masina* creareMasina(const char *marca, int pret, const char *numar);
-void citireMasina(Masina *m);
-void afisareMasina(const Masina *m);
-void eliberareMasina(Masina *m);
-
-#endif
+typedef struct HashTable {
+    Masina **table;
+    int size;
+} HashTable;
